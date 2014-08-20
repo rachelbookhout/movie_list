@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movies</title>
+    <link rel="stylesheet" type="text/css" href="">
+  </head>
+<body>
+<ul>
+
+<h1> Pick a Movie: </h1>
+
+  <% @sorted_movies.each do |movie| %>
+    <a href="/movies/<%=movie["id"]%>"><%= movie["title"] %></a></br>
+  <% end %>
+
+
+
+</body>
+</html>
+
