@@ -32,7 +32,13 @@ get '/' do
 end
 
 get '/movies' do
-  @sorted_movies = list_movies(@data)
+search = params["movies"]
+@sorted_movies = list_movies(@data)
+  if search != nil
+    @sorted_movies = list_movies(@data).select{|movie| search == movie["title"]}
+    # binding.pry
+    # "Found something!"
+  end
   erb :index
 end
 

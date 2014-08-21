@@ -10,6 +10,13 @@
 
 <h1> Pick a Movie: </h1>
 
+ <body>
+<form action="/movies" method="get">
+<label for="movie name">Search</label>
+<input type="text" id="movies" name="movies" />
+<input type="submit" />
+</form>
+
   <% @sorted_movies.each do |movie| %>
     <a href="/movies/<%=movie["id"]%>"><%= movie["title"] %></a></br>
   <% end %>
